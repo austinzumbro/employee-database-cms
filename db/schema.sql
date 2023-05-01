@@ -6,14 +6,14 @@ USE company_db;
 CREATE TABLE departments (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
-)
+);
 
-CREATE TABLE roles {
+CREATE TABLE roles (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
-}
+);
 
-CREATE TABLE employees {
+CREATE TABLE employees (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
@@ -23,6 +23,5 @@ CREATE TABLE employees {
     salary INT NOT NULL,
     FOREIGN KEY (dept_id) REFERENCES departments(id) ON DELETE SET NULL, 
     FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL,
-    FOREIGN KEY (manager_id) REFERENCES employees(id) ON DELETE SET NULL
-    
-}
+    FOREIGN KEY (manager_id) REFERENCES employees(id) ON DELETE SET NULL   
+);

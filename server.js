@@ -1,21 +1,31 @@
-const mysql = require('mysql2');
-const config = require('./config/config');
 const CLI = require('./lib/cli');
-const QUERY = require('./lib/query');
-
+const figlet = require('figlet');
 const cli = new CLI;
-const query = new QUERY;
-
-const db = mysql.createConnection(config.mysql,
-    console.log('Connected to company_db database.')
-);
 
 function init() {
     cli.start().then((response) => {
-        console.log(response.option);
-        init();
+        cli.parseResponse(response.option);
 
     })
 }
+
+// figlet.text(
+//     "Employee Database CMS",
+//     {
+//         font: "Broadway",
+//         horizontalLayout: "default",
+//         verticalLayout: "default",
+//         width: 200,
+//         whitespaceBreak: true,
+//     },
+//     function (err, data) {
+//         if (err) {
+//             console.log("Something went wrong...");
+//             console.dir(err);
+//             return;
+//         }
+//         console.log(data);
+//     }
+// );
 
 init();
