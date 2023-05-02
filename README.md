@@ -14,7 +14,7 @@ The resulting content management system uses the node package [mysql2](https://w
 
 Here it is in action:
 
-[Include a GIF]
+![GIF of the App in Use](./img/app-in-use.gif)
 
 ---
 
